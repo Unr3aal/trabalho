@@ -1,0 +1,640 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================================================
+   HEADER E NAVEGAÇÃO PRINCIPAL
+================================================== */
+header {
+  background-color: #4A4A4A;
+  box-shadow: 0px 3px 10px #464646;
+}
+
+.nav-bar {
+  display: flex;
+  grid-template-columns: 1fr auto 1fr;
+  justify-content: space-between;
+  padding: 1.5rem 6rem;
+  align-items: center;
+}
+
+.logo {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  color: white;
+  padding: 1rem;
+  cursor: default;
+}
+
+#nav-logo {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.nav-img, .icon {
+  height: 2.6rem;
+  width: 2.6rem;
+}
+
+.nav-list {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+}
+
+.nav-list ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-item {
+  margin: 0 55px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 400;
+  padding: 8px 16px;
+  color: #fff;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.nav-link:hover {
+  background-color: #FFB100;
+}
+
+.login-button, .cart-button {
+  justify-self: end;
+}
+
+.login-button button, .cart-button button {
+  border: none;
+  background-color: #4A4A4A;
+  padding: 10px 15px;
+  border-radius: 3rem;
+}
+
+.login-button button {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button button:hover {
+  background-color: #FFB100;
+}
+
+.login-button a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: end;
+}
+
+/* ==================================================
+   SUBMENU DE CATEGORIAS
+================================================== */
+.sub-nav-bar {
+  background-color: #FFB100;
+  padding: 0.8rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sub-nav-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.sub-nav-list li a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: black;
+  padding: 6px 12px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sub-nav-list li a:hover {
+  background-color: white;
+  border-radius: 4px;
+}
+
+/* ==================================================
+   MODAL LOGIN
+================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 380px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  cursor: pointer;
+}
+
+.login-submit {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #FFB100;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: 8px;
+}
+
+.forgot-password a {
+  font-size: 0.9rem;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* ==================================================
+   CONTEÚDO DA HOME
+================================================== */
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 2rem;
+}
+
+.top-row {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
+}
+
+.main-image {
+  flex: 2;
+}
+
+.main-image img,
+.side-images img,
+.bottom-banner img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.main-image img {
+  height: 43.5rem;
+}
+
+.side-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bottom-banner {
+  width: 100%;
+}
+
+.bottom-banner img {
+  height: 180px;
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+.footer {
+  width: 100%;
+  background-color: #e1e1e1;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  margin-top: auto;
+  border-top: 1px solid #ddd;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #d32f2f;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #b71c1c;
+}
+
+/* ==================================================
+   FORMULÁRIO DE CADASTRO
+================================================== */
+
+
+/* ==================================================
+   MINI CATÁLOGO
+================================================== */
+.menu-container {
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: rgb(212, 212, 212);
+  flex: 1;
+  display: none;
+}
+
+.menu-container.active {
+  display: block;
+}
+
+.menu-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.filter-button {
+  border: 1px solid #FFB100;
+  background-color: white;
+  color: #FFB100;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: #FFB100;
+  color: white;
+}
+
+.pizza-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pizza-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F5F5F5;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.pizza-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pizza-info h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.tags {
+  display: flex;
+  gap: 5px;
+}
+
+.tag {
+  background-color: #222;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.buy-button {
+  background-color: #66cc33;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pizza-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ==================================================
+   RESPONSIVIDADE
+================================================== */
+.mobile-menu-icon, .menu-mobile {
+  display: none;
+}
+
+.menu-mobile {
+  position: absolute;
+  top: 110px;
+  right: 0;
+  width: 100%;
+  background-color: #4A4A4A;
+  z-index: 1000;
+  display: none;
+  padding: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: all 0.3s ease-in-out;
+  align-items: center;
+  text-align: center;
+}
+
+.mobile-menu-icon {
+  display: none;
+  z-index: 1100;
+}
+
+.mobile-menu-icon button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu-icon img.icon {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+.menu-mobile.open {
+  display: block;
+}
+
+.menu-mobile ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.menu-mobile .nav-item {
+  width: 100%;
+}
+
+.menu-mobile .nav-link {
+  display: inline-block;
+  width: 100%;
+}
+
+.menu-mobile .login-button {
+  width: 100%;
+  text-align: center;
+}
+
+.menu-mobile .login-button button {
+  margin: 0 auto;
+  display: block;
+}
+
+@media screen and (max-width: 730px) {
+  .nav-bar {
+    padding: 1.5rem;
+  }
+
+  .nav-item,
+  .login-button {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .mobile-menu-icon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-mobile ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .menu-mobile .nav-item {
+    display: block;
+    padding: 1.2rem;
+  }
+
+  .menu-mobile .login-button {
+    display: block;
+    padding: 1rem 2rem;
+  }
+
+  .menu-mobile .login-button button {
+    width: 100%;
+  }
+
+  .open {
+    display: block;
+  }
+
+  .top-row {
+    flex-direction: column;
+  }
+
+  .side-images {
+    flex-direction: column;
+  }
+
+  .bottom-banner img {
+    height: auto;
+  }
+}
+
+/* ==================================================
+   CADASTRO
+================================================== */
+
+.form-container {
+      background-color: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .button-group {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-submit {
+      background-color: #000000;
+      color: white;
+    }
+
+    .btn-clear {
+      background-color: #000000;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+    }
